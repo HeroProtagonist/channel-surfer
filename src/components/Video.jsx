@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import handleListClick from '../redux/actions/videoActions';
 
 const Video = props => (
-  <li>
+  <li onClick={() => props.handleListClick(props.video)}>
     {props.video.name}
       {props.video.pictures.uri
     }
@@ -17,4 +19,11 @@ const Video = props => (
 //   videoList: state.videoList,
 // });
 
-export default connect()(Video);
+function mapDispatchToProps(dispatch) {
+  return {
+    handleListClick: bindActionCreators(handleListClick, dispatch),
+  };
+}
+
+
+export default connect(null, mapDispatchToProps)(Video);
