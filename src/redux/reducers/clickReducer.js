@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-export default function clickReducer(state = initialState.click, action) {
+export default function clickReducer(state = initialState.mainVideo, action) {
   switch (action.type) {
     case 'UPDATE_CLICK':
       return action.click;

@@ -1,3 +1,4 @@
 export default {
-  click: false,
+  mainVideo: {},
+  videoList: [],
 };
