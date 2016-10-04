@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import click from './clickReducer';
+import videoList from './videoListReducer';
 
 const rootReducer = combineReducers({
-  click,
+  videoList,
 });
 
 export default rootReducer;
