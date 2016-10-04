@@ -5,7 +5,7 @@ const VideoPlayer = props => (
     <iframe
       className="embed-responsive-item"
       id="player1"
-      src="https://player.vimeo.com/video/76979871"
+      src="https://player.vimeo.com/video/185441790"
       frameBorder="0"
       allowFullScreen
     />
@@ -17,4 +17,3 @@ VideoPlayer.propTypes = {
 };
 
 export default VideoPlayer;
-

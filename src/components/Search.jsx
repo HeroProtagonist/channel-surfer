@@ -24,7 +24,6 @@ const Search = props => {
       </button>
     </div>
   );
-
 };
 
 function mapDispatchToProps(dispatch) {

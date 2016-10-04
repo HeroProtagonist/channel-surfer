@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
 import Search from './Search.jsx';
 import VideoPlayer from './VideoPlayer.jsx';
 import VideoList from './VideoList.jsx';
