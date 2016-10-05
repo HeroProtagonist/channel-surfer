@@ -5,14 +5,29 @@ import { handleListClick, removeMainVideo } from '../redux/actions/videoActions'
 import { appendVideoList } from '../redux/actions/searchActions';
 
 const Video = props => (
-  <li onClick={() => {
-    props.appendVideoList(props.mainVideo);
-    props.handleListClick(props.video);
-    props.removeMainVideo(props.index);
+  <li
+    onClick={() => {
+      props.appendVideoList(props.mainVideo);
+      props.handleListClick(props.video);
+      props.removeMainVideo(props.index);
     }}
+    className="clearfix"
   >
     <h4 className="list-group-item-heading">{props.video.name}</h4>
-    <p className="list-group-item-text">{props.video.pictures.uri}</p>
+    <div >
+      <img
+        src={`https://i.vimeocdn.com/video/${props.video.uri.split('/')[2]}_100x75.jpg?r=pad`} 
+        className="thumbnail"
+      />
+    </div>
+    <p className="from list-group-item-text">
+      From:
+      <a
+        href={(props.video.user.link)} 
+        onClick={e => e.stopPropagation()}
+        target="_blank"> {props.video.user.name}
+      </a>
+    </p>
   </li>
 );
 

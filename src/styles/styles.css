@@ -30,3 +30,18 @@ ul li {
 #header {
   text-align: center;
 }
+
+/* Video */
+.thumbnail {
+  float: left;
+}
+
+.from {
+  vertical-align: middle;
+  line-height: 70px;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
