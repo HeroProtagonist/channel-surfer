@@ -1,7 +1,7 @@
 ul li {
   list-style: none;
   cursor: pointer;
-  margin-bottom: 20px; 
+  margin-bottom: 2px; 
 }
 
 /* Video Player */
@@ -29,6 +29,12 @@ ul li {
 
 #header {
   text-align: center;
+}
+
+/* Video List */
+.list-container {
+  height: 450px;
+  overflow-y: scroll;
 }
 
 /* Video */

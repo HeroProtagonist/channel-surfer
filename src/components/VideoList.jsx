@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Video from './Video.jsx';
 
 const VideoList = props => (
-  <div>
+  <div className="list-container">
     <ul className="list-group">
       {props.videoList.map((video, index) => (
         <Video
