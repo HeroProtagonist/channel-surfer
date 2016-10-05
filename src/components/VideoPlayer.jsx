@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+require('../styles/styles.css');
 
 const VideoPlayer = props =>
-  Object.keys(props.mainVideo).length === 0 ? <div>Loading...</div> : (
+  Object.keys(props.mainVideo).length === 0 ? <div className="loading">Loading...</div> : (
     <div className="embed-responsive embed-responsive-16by9">
       <iframe
         className="embed-responsive-item"
