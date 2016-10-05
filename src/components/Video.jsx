@@ -13,7 +13,7 @@ const Video = props => (
     }}
     className="clearfix"
       >
-    <h4 className="title list-group-item-heading">{props.video.name}</h4>
+    <a href="#" className="title list-group-item-heading">{props.video.name}</a>
     <div>
       <img
         src={`https://i.vimeocdn.com/video/${props.video.uri.split('/')[2]}_100x75.jpg?r=pad`}

@@ -31,11 +31,11 @@ class App extends React.Component {
         <Header />
         <div className="container-fluid">
           <div className="row-fluid">
-            <div className="col-sm-8">
+            <div className="col-xs-8">
               <VideoPlayer />
               <VideoDescription />
             </div>
-            <div className="col-sm-4">
+            <div className="col-xs-4">
               <Search />
               <VideoList />
             </div>
