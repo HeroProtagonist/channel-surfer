@@ -7,7 +7,7 @@ const Search = props => {
   let input;
 
   return (
-    <div>
+    <div id="search">
       <input
         type="text"
         placeholder="Search..."

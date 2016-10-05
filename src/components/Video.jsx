@@ -11,9 +11,8 @@ const Video = props => (
     props.removeMainVideo(props.index);
     }}
   >
-    {props.video.name}
-      {props.video.pictures.uri
-    }
+    <h4 className="list-group-item-heading">{props.video.name}</h4>
+    <p className="list-group-item-text">{props.video.pictures.uri}</p>
   </li>
 );
 

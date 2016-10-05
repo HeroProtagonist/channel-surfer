@@ -4,7 +4,7 @@ import Video from './Video.jsx';
 
 const VideoList = props => (
   <div>
-    <ul>
+    <ul className="list-group">
       {props.videoList.map((video, index) => (
         <Video
           key={index}

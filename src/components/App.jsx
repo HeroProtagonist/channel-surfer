@@ -4,8 +4,12 @@ import { bindActionCreators } from 'redux';
 import Search from './Search.jsx';
 import VideoPlayer from './VideoPlayer.jsx';
 import VideoList from './VideoList.jsx';
+import Header from './Header.jsx';
+import VideoDescription from './VideoDescription.jsx';
 import { handleSearchClick } from '../redux/actions/searchActions';
 import { handleListClick, removeMainVideo } from '../redux/actions/videoActions';
+
+require('../styles/styles.css');
 
 class App extends React.Component {
 
@@ -24,14 +28,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Channel Surfer!
-        <Search />
+        <Header />
         <div className="container-fluid">
           <div className="row-fluid">
             <div className="col-sm-8">
               <VideoPlayer />
+              <VideoDescription />
             </div>
             <div className="col-sm-4">
+              <Search />
               <VideoList />
             </div>
           </div>
