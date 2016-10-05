@@ -3,7 +3,12 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://api.vimeo.com';
 axios.defaults.headers.common.Authorization = `Bearer ${process.env.ACCESS_TOKEN}`;
 
-const searchClick = query => {
+export const appendVideoList = (video) => ({
+  type: 'APPEND_VIDEO_LIST',
+  video,
+});
+
+export const handleSearchClick = query => {
   console.log(query);
 
   return dispatch => {
@@ -47,5 +52,3 @@ const searchClick = query => {
     // });
   };
 };
-
-export default searchClick;
