@@ -5,7 +5,7 @@ import Search from './Search.jsx';
 import VideoPlayer from './VideoPlayer.jsx';
 import VideoList from './VideoList.jsx';
 import { handleSearchClick } from '../redux/actions/searchActions';
-import handleListClick from '../redux/actions/videoActions';
+import { handleListClick, removeMainVideo } from '../redux/actions/videoActions';
 
 class App extends React.Component {
 
@@ -15,6 +15,7 @@ class App extends React.Component {
 
     setTimeout( () => {
       this.props.handleListClick(this.props.videoList[0]);
+      this.props.removeMainVideo(0);
     }, 5000)
 
       
@@ -48,6 +49,7 @@ function mapDispatchToProps(dispatch) {
   return {
     handleSearchClick: bindActionCreators(handleSearchClick, dispatch),
     handleListClick: bindActionCreators(handleListClick, dispatch),
+    removeMainVideo: bindActionCreators(removeMainVideo, dispatch),
   };
 }
 

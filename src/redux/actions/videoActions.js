@@ -1,6 +1,9 @@
-const handleListClick = (display) => ({
+export const handleListClick = (display) => ({
   type: 'UPDATE_MAIN_PLAYER',
   display,
 });
 
-export default handleListClick;
+export const removeMainVideo = (index) => ({
+  type: 'REMOVE_MAIN_VIDEO',
+  index,
+});
