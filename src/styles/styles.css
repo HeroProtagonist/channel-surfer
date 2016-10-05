@@ -16,7 +16,6 @@ h3 {
 }
 
 /* Video Player */
-
 .loading {
   text-align: center;
   vertical-align: middle;
@@ -36,7 +35,6 @@ h3 {
 }
 
 /* Search */
-
 input {
   margin-right: 5px;
 }
@@ -47,12 +45,10 @@ input {
 }
 
 /* Header */
-
 #header {
   text-align: center;
   margin-bottom: 10px; 
   border-bottom: 1px solid black;
-  /*text-shadow: 2px 2px 4px black;*/
   color: #3366ff;
 }
 
@@ -81,7 +77,6 @@ ul:first-child {
   color: #0000ff;
   text-decoration: none;
 }
-
 
 .thumbnail {
   float: left;

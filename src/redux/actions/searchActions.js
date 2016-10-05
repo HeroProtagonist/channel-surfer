@@ -9,8 +9,6 @@ export const appendVideoList = (video) => ({
 });
 
 export const handleSearchClick = query => {
-  console.log(query);
-
   return dispatch => {
     axios.get('/channels', {
       params: {
@@ -21,14 +19,12 @@ export const handleSearchClick = query => {
       },
     })
     .then((resp) => {
-      console.log(resp);
       if (resp.data && resp.data.data) {
         return resp.data.data[0].uri;
       }
       throw 'Error no results!';
     })
     .then(channel => {
-      console.log(channel);
       return axios.get(`${channel}/videos`, {
         params: {
           page: 1,
@@ -38,7 +34,6 @@ export const handleSearchClick = query => {
     }
     )
     .then((resp) => {
-      console.log(resp);
       return dispatch({
         type: 'UPDATE_VIDEO_LIST',
         videoList: resp.data.data,
@@ -49,6 +44,5 @@ export const handleSearchClick = query => {
       console.log(err);
     });
 
-    // });
   };
 };

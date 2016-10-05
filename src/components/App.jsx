@@ -14,15 +14,13 @@ require('../styles/styles.css');
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.handleSearchClick('staff picks')
-    
-
-    setTimeout( () => {
-      this.props.handleListClick(this.props.videoList[0]);
-      this.props.removeMainVideo(0);
-    }, 5000)
-
-      
+    this.props.handleSearchClick('staff picks');
+    setTimeout(() => {
+      if (this.props.videoList.length) {
+        this.props.handleListClick(this.props.videoList[0]);
+        this.props.removeMainVideo(0);
+      }
+    }, 2500);
   }
 
   render() {
@@ -46,6 +44,13 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  videoList: React.PropTypes.array,
+  handleSearchClick: React.PropTypes.func,
+  handleListClick: React.PropTypes.func,
+  removeMainVideo: React.PropTypes.func,
+};
+
 const mapStateToProps = (state) => ({
   videoList: state.videoList,
 });
@@ -57,10 +62,5 @@ function mapDispatchToProps(dispatch) {
     removeMainVideo: bindActionCreators(removeMainVideo, dispatch),
   };
 }
-
-App.propTypes = {
-  click: React.PropTypes.bool,
-  handleClick: React.PropTypes.func,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -12,28 +12,30 @@ const Video = props => (
       props.removeMainVideo(props.index);
     }}
     className="clearfix"
-      >
+  >
     <a href="#" className="title list-group-item-heading">{props.video.name}</a>
     <div>
       <img
         src={`https://i.vimeocdn.com/video/${props.video.uri.split('/')[2]}_100x75.jpg?r=pad`}
+        alt="thumbnail"
         className="thumbnail"
       />
     </div>
     <p className="from pull-xs-left list-group-item-text">
       From:
       <a
-        href={(props.video.user.link)} 
+        href={(props.video.user.link)}
         onClick={e => e.stopPropagation()}
-        target="_blank"> {props.video.user.name}
+        target="_blank"
+      > {props.video.user.name}
       </a>
     </p>
   </li>
 );
 
-// VideoList.propTypes = {
-//   videoList: React.PropTypes.array,
-// };
+Video.propTypes = {
+  video: React.PropTypes.object,
+};
 
 const mapStateToProps = (state) => ({
   mainVideo: state.mainVideo,

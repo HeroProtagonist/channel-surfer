@@ -32,14 +32,14 @@ const Search = props => {
   );
 };
 
+Search.propTypes = {
+  handleSearchClick: React.PropTypes.func,
+};
+
 function mapDispatchToProps(dispatch) {
   return {
     handleSearchClick: bindActionCreators(handleSearchClick, dispatch),
   };
 }
-
-Search.propTypes = {
-  handleSearch: React.PropTypes.func,
-};
 
 export default connect(null, mapDispatchToProps)(Search);

@@ -12,15 +12,15 @@ const VideoPlayer = props =>
         allowFullScreen
       />
     </div>
-  )
+  );
 
 VideoPlayer.propTypes = {
 
 };
 
-// VideoList.propTypes = {
-//   videoList: React.PropTypes.array,
-// };
+VideoPlayer.propTypes = {
+  mainVideo: React.PropTypes.object,
+};
 
 const mapStateToProps = (state) => ({
   mainVideo: state.mainVideo,
