@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = props => (
   <div id="header">
-    <h2> Channel Surfer! </h2>
+    <h1> <em> Channel Surfer! </em> </h1>
   </div>
 );
 

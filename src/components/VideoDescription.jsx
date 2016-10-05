@@ -11,7 +11,7 @@ const VideoDescription = (props) =>
         onClick={e => e.stopPropagation()}
         target="_blank"> {props.mainVideo.user.name}
       </a>
-    <p>{props.mainVideo.description}</p>
+    <p id="description">{props.mainVideo.description}</p>
   </div>
   )
 

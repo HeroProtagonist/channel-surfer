@@ -12,15 +12,15 @@ const Video = props => (
       props.removeMainVideo(props.index);
     }}
     className="clearfix"
-  >
-    <h4 className="list-group-item-heading">{props.video.name}</h4>
-    <div >
+      >
+    <h4 className="title list-group-item-heading">{props.video.name}</h4>
+    <div>
       <img
-        src={`https://i.vimeocdn.com/video/${props.video.uri.split('/')[2]}_100x75.jpg?r=pad`} 
+        src={`https://i.vimeocdn.com/video/${props.video.uri.split('/')[2]}_100x75.jpg?r=pad`}
         className="thumbnail"
       />
     </div>
-    <p className="from list-group-item-text">
+    <p className="from pull-xs-left list-group-item-text">
       From:
       <a
         href={(props.video.user.link)} 
