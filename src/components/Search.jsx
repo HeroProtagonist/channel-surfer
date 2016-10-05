@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import handleSearch from '../redux/actions/searchActions';
+import { handleSearchClick } from '../redux/actions/searchActions';
 
 const Search = props => {
   let input;
@@ -16,7 +16,7 @@ const Search = props => {
       <button
         className="btn btn-default"
         onClick={() => {
-          props.handleSearch(input.value);
+          props.handleSearchClick(input.value);
           input.value = '';
         }}
       >
@@ -28,7 +28,7 @@ const Search = props => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleSearch: bindActionCreators(handleSearch, dispatch),
+    handleSearchClick: bindActionCreators(handleSearchClick, dispatch),
   };
 }
 

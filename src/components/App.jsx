@@ -4,20 +4,21 @@ import { bindActionCreators } from 'redux';
 import Search from './Search.jsx';
 import VideoPlayer from './VideoPlayer.jsx';
 import VideoList from './VideoList.jsx';
+import { handleSearchClick } from '../redux/actions/searchActions';
+import handleListClick from '../redux/actions/videoActions';
 
 class App extends React.Component {
 
-  // componentDidMount() {
-  //   http://vimeo.com/api/v2/channel/staffpicks/videos
-  //   console.log(id)
-  //   axios.post('https://api.vimeo.com/oauth/authorize/client', {
-  //     grant_type: 'client_credentials',
-  //     headers: {
-  //       Authorization: `Basic ${id}`,
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //   });
-  // }
+  componentDidMount() {
+    this.props.handleSearchClick('staff picks')
+    
+
+    setTimeout( () => {
+      this.props.handleListClick(this.props.videoList[0]);
+    }, 5000)
+
+      
+  }
 
   render() {
     return (
@@ -40,18 +41,19 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  click: state.click,
+  videoList: state.videoList,
 });
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     handleClick: bindActionCreators(handleClick, dispatch),
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    handleSearchClick: bindActionCreators(handleSearchClick, dispatch),
+    handleListClick: bindActionCreators(handleListClick, dispatch),
+  };
+}
 
 App.propTypes = {
   click: React.PropTypes.bool,
   handleClick: React.PropTypes.func,
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

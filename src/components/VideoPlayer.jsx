@@ -6,7 +6,7 @@ const VideoPlayer = props => (
     <iframe
       className="embed-responsive-item"
       id="player1"
-      src={`https://player.vimeo.com/video/${props.mainVideo.uri.split('/')[2]}`}
+      src={`https://player.vimeo.com/video/${props.mainVideo.uri ? props.mainVideo.uri.split('/')[2] : ''}`}
       frameBorder="0"
       allowFullScreen
     />
