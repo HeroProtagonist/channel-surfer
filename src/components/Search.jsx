@@ -12,6 +12,12 @@ const Search = props => {
         type="text"
         placeholder="Search..."
         ref={c => (input = c)}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            props.handleSearchClick(input.value);
+            input.value = '';
+          }
+        }}
       />
       <button
         className="btn btn-default"
